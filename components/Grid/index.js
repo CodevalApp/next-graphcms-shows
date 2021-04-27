@@ -30,6 +30,10 @@ const CardStyle = css`
     font-size: 1.25rem;
     line-height: 1.5;
   }
+
+  @media (max-width: 600px) {
+    width: 90vw;
+  }
 `
 
 const StyledGrid = styled.div`
