@@ -6,11 +6,14 @@ import { Markdown } from '@c/Markdown'
 
 export default function Artist({ artist }) {
   const { fullName, webUrl, facebookUrl, instagramUrl, spotifyUrl, youTubeUrl, bio } = artist;
+  
+  const withHttp = url => !/^https?:\/\//i.test(url) ? `http://${url}` : url;
+
   return (
     <Layout>
       <Title>{fullName}</Title>
       <FlexyRow justify="flex-start">
-        {webUrl && <a href={webUrl} target="_blank">Website</a>}
+        {webUrl && <a href={withHttp(webUrl)} target="_blank">Website</a>}
         {facebookUrl && <a href={facebookUrl} target="_blank">Facebook</a>}
         {instagramUrl && <a href={instagramUrl} target="_blank">Instagram</a>}
         {spotifyUrl && <a href={spotifyUrl} target="_blank">Spotify</a>}
