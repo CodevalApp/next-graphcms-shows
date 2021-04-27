@@ -3,16 +3,10 @@ import styled from 'styled-components'
 import Layout from '@c/Layout'
 import FlexyRow from '@c/FlexyRow'
 import { Title } from '@c/Title'
+import { Markdown } from '@c/Markdown'
 import { getShowBySlug } from '@l/graphcms'
 import { formatUSD, formatDate } from '@l/utils'
-
-const Markdown = styled(ReactMarkdown)`
-  img {
-    width: 100%;
-    border-radius: 20px;
-    border: 4px solid currentColor;
-  }
-`
+import Link from 'next/link'
 
 const ArtistName = styled.h2`
   text-align: center;
@@ -53,18 +47,13 @@ export default function Shows({ show }) {
 
       {show.artists.map(artist => (
         <div key={artist.id}>
-          <ArtistName>{artist.fullName}</ArtistName>
-
-          <Portrait images={artist.images} />
-
-          <FlexyRow justify="flex-start">
-            <a href={artist.webUrl} target="_blank">Website</a>
-            <a href={artist.facebookUrl} target="_blank">Facebook</a>
-            <a href={artist.instagramUrl} target="_blank">Instagram</a>
-            <a href={artist.youTubeUrl} target="_blank">YouTube</a>
-          </FlexyRow>
-
-          <Markdown source={artist.bio} />
+          {console.log(artist)}
+          <Link href={`/artists/${artist.slug}`}>
+            <a>
+              <ArtistName>{artist.fullName}</ArtistName>
+              <Portrait images={artist.images} />
+            </a>
+          </Link>
         </div>
       ))}
     </Layout>
