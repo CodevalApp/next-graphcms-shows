@@ -5,19 +5,19 @@ import FlexyRow from '@c/FlexyRow'
 import { Markdown } from '@c/Markdown'
 
 export default function Artist({ artist }) {
-  console.log(artist)
+  const { fullName, webUrl, facebookUrl, instagramUrl, spotifyUrl, youTubeUrl, bio } = artist;
   return (
     <Layout>
-      <Title>{artist.fullName}</Title>
+      <Title>{fullName}</Title>
       <FlexyRow justify="flex-start">
-        <a href={artist.webUrl} target="_blank">Website</a>
-        <a href={artist.facebookUrl} target="_blank">Facebook</a>
-        <a href={artist.instagramUrl} target="_blank">Instagram</a>
-        <a href={artist.spotifyUrl} target="_blank">Spotify</a>
-        <a href={artist.youTubeUrl} target="_blank">YouTube</a>
+        {webUrl && <a href={webUrl} target="_blank">Website</a>}
+        {facebookUrl && <a href={facebookUrl} target="_blank">Facebook</a>}
+        {instagramUrl && <a href={instagramUrl} target="_blank">Instagram</a>}
+        {spotifyUrl && <a href={spotifyUrl} target="_blank">Spotify</a>}
+        {youTubeUrl && <a href={youTubeUrl} target="_blank">YouTube</a>}
       </FlexyRow>
 
-      <Markdown source={artist.bio} />
+      <Markdown source={bio} />
     </Layout>
   )
 }
