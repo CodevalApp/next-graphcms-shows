@@ -41,7 +41,6 @@ const StyledGrid = styled.div`
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 1rem;
   width: 100%;
 
   @media (min-width: 600px) {
@@ -67,9 +66,5 @@ export function Card({ children, header, href, title }) {
 }
 
 export function Grid({ children }) {
-  return (
-    <StyledGrid>
-      {children}
-    </StyledGrid>
-  )
+  return <StyledGrid>{children}</StyledGrid>
 }
