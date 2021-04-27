@@ -35,14 +35,12 @@ const Portrait = ({ images = [] }) => {
 
 export default function Shows({ show }) {
   return (
-    <Layout title={`${show.title} / next-graphcms-shows`} maxWidth="900px" padding="0 2em">
+    <Layout title={`${show.title} / next-graphcms-shows`}>
       <Title>{show.title}</Title>
-
       <FlexyRow>
         <span>Price: {formatUSD(show.ticketPrice)}</span>
         <span>{formatDate(show.scheduledStartTime)}</span>
       </FlexyRow>
-
       <Markdown source={show.description} />
 
       {show.artists.map(artist => (

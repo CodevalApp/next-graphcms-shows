@@ -7,8 +7,8 @@ export default function Layout({
   background,
   children,
   color = '#fff',
-  maxWidth = '100%',
-  padding = '5rem 0',
+  maxWidth = '900px',
+  padding = '0 2em',
   alignItems = 'center'
 }) {
   return (
