@@ -5,6 +5,7 @@ import FlexyRow from '@c/FlexyRow'
 import { Markdown } from '@c/Markdown'
 
 export default function Artist({ artist }) {
+  console.log(artist)
   return (
     <Layout>
       <Title>{artist.fullName}</Title>
@@ -12,6 +13,7 @@ export default function Artist({ artist }) {
         <a href={artist.webUrl} target="_blank">Website</a>
         <a href={artist.facebookUrl} target="_blank">Facebook</a>
         <a href={artist.instagramUrl} target="_blank">Instagram</a>
+        <a href={artist.spotifyUrl} target="_blank">Spotify</a>
         <a href={artist.youTubeUrl} target="_blank">YouTube</a>
       </FlexyRow>
 
