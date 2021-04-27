@@ -21,7 +21,7 @@ export default function Artist({ artist }) {
   return (
     <Layout>
       <Title>{fullName}</Title>
-      <Portrait images={artist.images} />
+      <Portrait images={artist.images} style={{ marginBottom: '1.5rem' }} />
       <FlexyRow justify="flex-start">
         {webUrl && (
           <a href={withHttp(webUrl)} target="_blank" rel="noreferrer">

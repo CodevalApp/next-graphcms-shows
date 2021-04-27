@@ -8,7 +8,7 @@ const ArtistPhoto = styled.div`
   height: 200px;
   border-radius: 100px;
   border: 4px solid currentColor;
-  margin: 0 auto;
+  margin: 1.5rem auto;
 `
 
 export const Portrait = ({ images = [] }) => {
